@@ -13,9 +13,11 @@ ip route
 ping -c 4 127.0.0.1
 
 3. Check DNS - user command in terminal below
-getent hosts example.com
+getent hosts localhost
 
-4. Check whether the web server service is running, used command "sudo systemctl status apache2 --no-pager"
+getent hosts was a useful diagnostic, but DNS was not the cause of this incident. DNS resolution was checked as part of the broader investigation.
+
+5. Check whether the web server service is running, used command "sudo systemctl status apache2 --no-pager"
 <img width="940" height="482" alt="Screenshot 2026-10-27 at 10 43 20 AM" src="https://github.com/user-attachments/assets/9c88ee13-7ad9-4fc1-be6a-3a83628ad5bc" />
 
 results: inactive (dead) — the service is stopped.
@@ -65,7 +67,7 @@ Result: HTTP/1.1 200 OK — the server returned a successful HTTP response.
 
 <img width="612" height="401" alt="Screenshot 2026-10-27 at 11 40 23 AM" src="https://github.com/user-attachments/assets/138a9432-afc9-466f-9205-abbcc6e67fba" />
 
-12. Run Check health script to verify apache2 is back up and running
+13. Run Check health script to verify apache2 is back up and running
 <img width="612" height="401" alt="Screenshot 2026-10-27 at 11 40 23 AM" src="https://github.com/user-attachments/assets/f100e921-0ded-4582-9087-153175d6c2cf" />
 
 
